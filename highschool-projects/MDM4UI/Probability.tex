@@ -1,0 +1,138 @@
+\section{Probability}
+
+    \subsection{What is probability?}
+    Probability is the measurement of the chance of an event occurring.
+    If you've ever checked the weather and seen that it's a "20\% chance of rain", you've seen probability in action.
+    To start, we'll need to define some terms.
+    \begin{definition}
+        Outcomes: A possible result, typically referencing all of the possible results from the situation.
+    \end{definition}
+    \begin{definition}
+        Events: These typically refer to desired outcomes
+    \end{definition}
+    Typically when finding probability, we'll divide all possible outcomes from our desired outcomes.
+    Thinking in terms of set notation, we'll refer to all of our desired outcomes as n(A), where A is our desired outcome.
+    n(S) will refer to all of the possible outcomes, and P(A) referring to the likelihood of A occurring.
+    To generalize, we'll use the equation below.
+    \begin{equation*}
+        P(A) = \frac{n(A)}{n(S)}
+    \end{equation*}
+    Since the number of desired outcomes will never be greater than the number of total outcomes, we'll always have a decimal between 0 (0\%) and 1 (100\%), which we can convert to a percentage (ex. $\frac{1}{4}=0.25=25\%$), though typically we'll simply leave it as a reduced version of the fraction.
+    
+    \subsection{Mutually Exclusive Events and Non-Mutually Exclusive Events}
+    Mutually Exclusive events are events that have zero overlap with other events.
+    Recall the Venn Diagram of Sets in the Combinations section, and assume A and B are both events.
+    To find the probability of either of them happening, we'll have to remember the equation:
+    \begin{equation*}
+        n(A\cup B) = n(A) + n(B)
+    \end{equation*}
+    This equation finds all the ways A or B can happen, with zero overlap.
+    The problem with this equation is that it only finds the number of wanted outcomes.
+    Remember, to find the probability of something, we find the wanted outcomes, and divide it by all of the possible outcomes.
+    After this, our equation will look like this:
+    \begin{equation*}
+        \frac{n(A \cup B)}{n(S)} = \frac{n(A) + n(B)}{n(S)}
+    \end{equation*}
+    Which reduces to:
+    \begin{equation*}
+        P(A\cup B) = P(A) + P(B)
+    \end{equation*}
+    For non-mutually exclusive events, we must instead use a different equation, more accurate to the one we've discussed in the Sets Unit.
+    Following the same logic we used earlier, our equation works out to:
+    \begin{equation*}
+        P(A\cup B) = P(A) + P(B) - P(A\cap B)
+    \end{equation*}
+    Where $P(A\cap B)$ equals the probability of both of those events occurring.
+
+    \subsection{Independent Probability}
+    When two events occur at the same time, or one after another with no effect on each other, they are called Independent Events.
+    If you roll a die, then select a card, this would be independent, as the outcomes don't affect each other.
+    So solve an Independent Probability question we'll have to think in terms of sets, so the probability of A and B, can be solved with the equation below.
+    \begin{equation*}
+        P(A\cap B) = P(A) \cap(B)
+    \end{equation*}
+        But what happens if we need to find the probability of $(A \mbox{ or } B)$?
+        To find that we'll need to use another equation.
+    \begin{equation*}
+        P(A\cup B) = P(A) + P(B) - P(A\cap B)
+    \end{equation*}
+    
+    \subsection{Markov Chains}
+    Markov Chains are ways of predicting probability after successive iterations.
+    Suppose that Product A has a 70\% chance of repurchasing, and Product B has a 70\% chance of repurchasing, how would we model this? We'd use a Markov Chain. Shown below is our probability matrix.
+    \begin{equation*}
+        P = 
+        \begin{bmatrix}
+            0.7 & 0.3\\
+            0.3 & 0.7
+        \end{bmatrix}
+    \end{equation*}
+    Now, we have to find the initial probability of something, which we call a \textbf{transition matrix}. We'll represent this in the form of how many people started buying A or B, (shown below). Since this is the initial time, we'll refer to it as $S_{0}$, though you may also hear it called a \textbf{probability vector}.
+    \begin{equation*}
+    S_{0} = 
+        \begin{bmatrix}
+            0.6 & 0.4
+        \end{bmatrix}
+    \end{equation*}
+    To find the next probability vector, or $S_{1}$, we'll have to multiply the transition matrix by the probability vector.
+    \begin{equation*}
+        \begin{bmatrix}
+            0.6 & 0.4
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            0.7 & 0.3\\
+            0.3 & 0.7
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0.54 & 0.46
+        \end{bmatrix}
+        = S_{1}
+    \end{equation*}
+    Much like rolling a die, the more times you repeat this process, the closer you are to the actual results. Though what if there was an easier way to do this?
+    
+    \subsection{Steady State Vectors}
+    In Markov Chains, the probability vectors will eventually stop changing.
+    A probability vector that remains unchanged upon multiplication is called the \textbf{steady state vector}.
+    This vector will represent the long term trend of the event.
+    To find this without repeating the Markov Chain multiplication, we must think of the problem in terms of a system of equations.
+    \begin{equation*}
+        \begin{bmatrix}
+            a & b
+        \end{bmatrix}
+        \cdot
+        \begin{bmatrix}
+            0.7 & 0.3\\
+            0.3 & 0.7
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            a & b
+        \end{bmatrix}
+    \end{equation*}
+    To have a systems of equations from this, we must first assert that $a + b = 1$, and find the other by multiplying for one of the values.
+    In this case, we can see that $0.7a + 0.3b = a$.
+    Now solve this systems of equations like you have done in Grade 9.
+    
+    \subsection{Odds}
+    Have you ever heard the (seemingly wrong) Roll Up The Rim odds?
+    They claim that 1 in 5 people are winners!
+    But what does this mean?
+    Odds are the degree of confidence that someone has that an event will occur.
+    To find the odds of something occurring, we must use the formula below.
+    \begin{equation*}
+        P(A) : P(A)' 
+    \end{equation*}
+    This equation represents a ratio of the probability of A happening, against the probability of A \textbf{not} happening. Likewise with the odds of something \textbf{not occurring}, we can use the reverse of this formula.
+    \begin{equation*}
+        P(A)' : P(A)
+    \end{equation*}
+    What happens if we want to win a bet though? You've probably heard of betting odds before. To do that, we'll use the equation below, where X will equal the amount won.
+    \begin{equation*}
+        \frac{P(A)}{P(A)'} = \frac{\emph{Amount Bet}}{x}
+    \end{equation*}
+    After this, isolate X, which will give you the following equation.
+    \begin{equation*}
+        X = \emph{Amount Bet}\cdot\frac{P(A)'}{P(A)}
+    \end{equation*}

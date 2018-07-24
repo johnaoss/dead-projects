@@ -1,0 +1,221 @@
+\section{Modelling with Matrices}
+    
+    \subsection{Intro to Matrices}
+    A matrix is a rectangular array of numbers that is used to organize data.
+    If you are used to computer programming, you will recognize them as 2D arrays.
+    If you are good with set notation, they are in essence, a set of sets.
+    Matrices follow the format below:
+    \begin{equation*}
+        X =
+        \begin{bmatrix}
+            a & b & c \\
+            d & e & f
+        \end{bmatrix}
+    \end{equation*}
+    Matrices have various properties, and unique terms created to describe them.
+    For instance, looking at the matrix above, we can safely say that $a$ in an entry, as defined below.
+    \begin{definition}
+        Entry: An entry refers to a number in a matrix.
+    \end{definition}
+    How did we figure out the number of entries in the matrix? Simple, we can use the matrix's \emph{dimensions} to figure that out.
+    \begin{definition}Dimensions:
+        These refer to the size of the matrix, described by the number of rows and columns.
+        The formula below is used to solve for dimensions, where D is the result, $R$ is the rows, and $C$ is the columns.
+        \begin{equation*}
+                D = R \cdot C
+        \end{equation*}
+    \end{definition}
+    Matrix's entries are numbered in a way so that it is easy to refer to a specific entry.
+    Capital letters are used for the names of matrices, and lowercase characters are used for the names of entries.
+    Shown below are the entries named, with numbers instead of letters.
+    The first character represents the y value, whereas the second represents the x value.
+    In the equation below, $a_{13}$ represents the entry in row 1, column 3.
+    \begin{equation*}
+        X =
+        \begin{bmatrix}
+            a_{11} & a_{12} & a_{13} \\
+            a_{21} & a_{22} & a_{23}
+        \end{bmatrix}
+    \end{equation*}
+        
+    \subsection{Variations and Classifications of Matrices}
+    Matrices can be transformed, and compared to each other, much like sets.
+    The definitions of the variations and classifications of the matrices are listed below.
+    \begin{definition}Transpose Matrix: 
+        A transpose matrix is a matrix obtained by interchanging the rows and columns. This is written as $X^{+}$. Shown below is Matrix W, and the transposed equivalent.
+        \begin{equation*}
+            W =
+            \begin{bmatrix}
+                a & b & c \\
+                d & e & f
+            \end{bmatrix}
+            -> X^{+} =
+            \begin{bmatrix}
+                a & d \\
+                b & e \\
+                c & f
+            \end{bmatrix}
+        \end{equation*}
+    \end{definition}
+        
+    \begin{definition}Column Matrix:
+        A Column Matrix is a matrix that has only one x value. Instead of rows and columns, it is merely a column.
+        For instance, Matrix X in this case would be a Column Matrix.
+        \begin{equation*}%Column Matrix
+            X =
+            \begin{bmatrix}
+                a&\\
+                b&\\
+                c
+            \end{bmatrix}
+        \end{equation*}
+    \end{definition}
+        
+    \begin{definition}Row Matrix:
+        A Row Matrix is a matrix that has only one y value. It is the transpose of the Column Matrix For instance, Matrix Y in this case would be a Row Matrix.
+        \begin{equation*}%Row Matrix
+            Y =
+            \begin{bmatrix}
+                a & b & c
+            \end{bmatrix}
+        \end{equation*}
+    \end{definition}
+        
+    \begin{definition}Square Matrix:
+        A Square Matrix is a matrix in which the rows and columns are equal.
+        For instance, Matrix Z below is a Square Matrix.
+        \begin{equation*}%Column Matrix
+            Z =
+            \begin{bmatrix}
+                a & b & c\\
+                d & e & f\\
+                g & h & i
+            \end{bmatrix}
+        \end{equation*}
+    \end{definition}
+        
+    \subsection{Basic Operations with Matrices}
+        Matrices may only be added or subtracted when they have the same dimensions.
+        Adding matrices is done by adding entry by entry to the other matrix.
+        $A_{12}$ will be added with $B_{12}$ and so forth.
+        Shown below is a valid example of adding with matrices in which the entries are labeled to show proper addition:
+        \begin{equation*}
+            \begin{bmatrix}
+                a_{11} & a_{12} & a_{13} \\
+                a_{21} & a_{22} & a_{23}
+            \end{bmatrix}
+            +
+            \begin{bmatrix}
+                b_{11} & b_{12} & b_{13} \\
+                b_{21} & b_{22} & b_{23}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                (a+b)_{11} & (a+b)_{12} & (a+b)_{13} \\
+                (a+b)_{21} & (a+b)_{22} & (a+b)_{23}
+            \end{bmatrix}
+        \end{equation*}
+        They may also be multiplied by a coefficient, by multiplying the coefficient with every entry in the matrix.
+        Shown below is a proper solution in which a matrix is multiplied by a coefficient, with entries labeled:
+         \begin{equation*}
+            x
+            \begin{bmatrix}
+                y_{11} & y_{12} & y_{13} \\
+                y_{21} & y_{22} & y_{23}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                xy_{11} & xy_{12} & xy_{13} \\
+                xy_{21} & xy_{22} & xy_{23}
+            \end{bmatrix}
+        \end{equation*}
+        
+    \subsection{Multiplying Matrices Together}
+        Matrices may also be multiplied with other matrices, yet to do so we must follow certain rules.
+        Let's say we have Matrix A and Matrix B as shown below.
+        To multiply, we need to make sure the \emph{inner dimensions} are the same.
+        We know that Matrix A's dimensions are $3 \cdot 2$, whereas for Matrix B, they are $2 \cdot 3$.
+        Since we know this, we can find the \emph{inner dimensions}.
+        The \emph{inner dimensions}, equals the columns of Matrix A and the rows of Matrix B.
+        In this case, that would work out to be $3$ and $3$.
+        Since they are the same, we are allowed to multiply these matrices. 
+        \begin{equation*}%Demonstrating Matrices. 
+            A =
+            \begin{bmatrix}
+                a & b & c\\
+                d & e & f\\
+            \end{bmatrix}
+            B = 
+            \begin{bmatrix}
+                u & v\\
+                w & x\\
+                y & z
+            \end{bmatrix}
+        \end{equation*}
+        Next, the rows of Matrix A times the columns of Matrix B, also known as the \emph{outer dimensions}, will give us the dimensions of the resultant matrix.
+        Since Matrix A has two rows, and Matrix B has two columns, our resultant Matrix will possess the dimensions $2\cdot2$.
+        Shown below is the updated equation. 
+        \begin{equation*}
+            \begin{bmatrix}
+                a & b & c\\
+                d & e & f\\
+            \end{bmatrix}
+        \cdot
+            \begin{bmatrix}
+                u & v\\
+                w & x\\
+                y & z
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                ?&?\\
+                ?&?
+            \end{bmatrix}
+        \end{equation*}
+        Multiplying them is a bit strange at first, because to do it, we multiply row by row.
+        Starting at the first row in Matrix A, we can see we have $a_{11},b_{12},c_{13}$ as our values, with their locations being labeled for convenience.
+        We must multiply these values each column in Matrix B, starting with the values $u_{11},w_{21},y_{31}$.
+        To find entry (1,1) we can use the formula shown below, where $E$ represents the entry, $r$ represents a row in Matrix A, and c represents a column in Matrix B.
+        \begin{equation*}
+            E_{11} = r_{11} \cdot c_{11}  +  r_{12} \cdot c_{21}  +   r_{13} \cdot c_{31}
+        \end{equation*}
+        If you want to do it just by eye, you can multiply $A_{11}$ by $B_{11}$, $A_{12}$ by $B_{21}$, and $A_{13}$ by $B_{31}$, and add them all up.
+        It will seem totally awful at first, but after you do a couple it'll all work out fine.
+        
+    \subsection{Identity Matrices}
+        An Identity Matrix is a $n\cdot n$ size matrix in which every number along the main diagonal is a 1, and the rest are zeros.
+        Shown below is Matrix I, a $3\cdot 3$ Identity Matrix.
+        \begin{equation*}
+        I =
+            \begin{bmatrix}
+                1 & 0 & 0\\
+                0 & 1 & 0\\
+                0 & 0 & 1
+            \end{bmatrix}
+        \end{equation*}
+        This matrix is very special, as any square matrix multiplied by its inverse will equal an Identity Matrix.
+        We can further formalize this assumption, by referring to a given matrix as Matrix A.
+        \begin{equation*}
+            A\cdot A^{-1} = I
+        \end{equation*}
+        Its too bad we can't divide matrices, how can we ever solve for I now? Good thing we can use something called an Inverse Matrix.
+        
+    \subsection{Finding Inverse Matrices}
+        Finding the inverse of large matrices is one of the most mathematically intensive processes out there.
+        Good thing we'll only be finding the inverse of a $2\cdot2$ matrix instead. To find the inverse of a $2\cdot 2$ matrix, we must use first define the matrices.
+        \begin{equation*}
+        A = 
+            \begin{bmatrix}
+                a & b\\
+                c & d
+            \end{bmatrix}
+        \end{equation*}
+        Now that we have the starting matrix, it is time to find the inverse. To find it, we must multiply the determinant, by the matrix, and swap several spots of numbers. Again, sounds odd, but we just need to follow the formula below.
+        \begin{equation*}
+        A^{-1} = \frac{1}{ad-bc}
+            \begin{bmatrix}
+                d & -b\\
+                -c & a
+            \end{bmatrix}
+        \end{equation*}
+        After this step, simply multiply the determinant into the matrix, and you have found $A^{-1}$!

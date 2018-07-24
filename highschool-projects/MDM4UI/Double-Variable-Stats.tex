@@ -1,0 +1,124 @@
+\section{Two-Variable-Stats}
+
+    \subsection{Differences compared to Single Variable Stats}
+    Two variable is used quite widely, and can be used to measure the effects of various things, rather than just comparing frequency as we have previously done.
+    We can compared both $x$ and $y$ values, giving us a lot more freedom, but a lot more complex graphing.
+    
+    \subsection{Linear Correlation}
+    Linear correlation is used to find relationships between two variables. 
+    We plot or graph this to easier visualize the results, and relationships.
+    We often use this to discern if the variations in one variable(independent) affect the other (dependant). 
+    This correlation will be either known as a positive correlation, or a negative correlation. 
+    \begin{definition}
+        Positive Correlation: A correlation is positive if the dependant variable increases when the independent variable is increased. 
+    \end{definition}
+    \begin{definition}
+        Negative Correlation: A correlation is negative if the dependant variable \emph{decreases} when the independent variable is increased.
+    \end{definition}
+    These correlations also have various \textbf{weights}, and we can use an equation to find that; but first we must define what a weight is.
+    \begin{definition}
+       Relationships: These relationships show how close the line of best fit is to the points. These can be either defined as weak, moderate, and strong, and can be found by using the correlation coefficient.
+    \end{definition}
+    Oh no! What's the correlation coefficient? Earlier, we said we can find the weight using an equation, and this equation is known as the \textbf{correlation coefficient}.
+    \begin{definition}
+        Correlation Coefficient: This is a measurement of how strong the correlation is between two variables. Typically designated as $r$, we can find it by using the equation below.
+        \begin{equation*}
+            r = \frac{n\sum xy - (\sum x)(\sum y)}{\sqrt{[n\sum x^{2}-(\sum x)^{2}][n\sum y^{2}-(\sum y)^{2}]}}
+        \end{equation*}
+    \end{definition}
+    This correlation is always between -1 and 1.
+    If it is positive, it is a positive correlation, and the opposite is true if it is a negative. 
+    You can classify a relationship type by using this number, and these following inequalities.
+    \begin{center}
+        \begin{itemize}
+            \item Strong correlation when: $\frac{2}{3} < r < 1$
+            \item Moderate correlation when: $\frac{1}{3} < r < \frac{2}{3}$
+            \item Weak correlation when: $0 < r < \frac{1}{3} $
+        \end{itemize}
+    \end{center}
+    If the correlation coefficient (henceforth referred to as $r$) is not what you'd expect, you can always improve the accuracy by increasing the number of data points. Keep in mind that you also need to follow one of the commandments of statistics: 
+    \begin{center}
+        \large \textbf{A STRONG CORRELATION DOES NOT NECESSARY IMPLY CAUSATION.}
+    \end{center}
+    
+    \subsection{Linear Regression}
+    Regression (in general) is defined as "an analytical technique for determining a relationship between a dependant, and an independent variable".
+    When two variables \emph{appear} to have a linear correlation, you can find the line of best fit. 
+    When the correlation is strong (recall: when $\frac{2}{3} < r < 1$), it is easy to estimate this line, but when any other time it is nigh impossible.
+    Luckily, mathematicians don't like doing difficult things, so we have an equation for this line.\\
+    
+    We begin with $y = mx + b$, the standard linear formula.
+    For a, we use the following equation:
+    \begin{equation*}
+        a = \frac{n\sum xy - (\sum x)(\sum y)}{n\sum x^{2} - (\sum x)^{2}}
+    \end{equation*}
+    Then for b, we'll use the next equation.
+    \begin{equation*}
+        b = \mean{y} - a\mean{x}
+    \end{equation*}
+    
+    \subsection{Other Types of Regressions}
+    Unfortunately, not all relationships are linear, in fact most are exponential, or polynomial.
+    We can define certain growths and decays as various types defined below.
+    Please keep in mind they are almost all done on the graphing calculator, and as such do not need to be memorized.
+    If you have taken MHF4UI or MHF3UI, you will almost certainly know what most of these are.
+    \begin{definition}
+        Exponential Growth/Decay: This has an $y_{int}$ of a, and an equation of:
+        \begin{equation*}
+            y = ab^{x}
+        \end{equation*}
+    \end{definition}
+    \begin{definition}
+        Linear Growth/Decay: This has a $y_{int}$ of b, and an equation of:
+        \begin{equation*}
+            y = ax+b
+        \end{equation*}
+    \end{definition}
+    \begin{definition}
+        Quadratic Growth/Decay: This has a $y_{int}$ of c, and an equation of:
+        \begin{equation*}
+            y = ax^{2} + bx + c
+        \end{equation*}
+    \end{definition}
+    \begin{definition}
+        Cubic Growth/Decay: This has a $y_{int}$ of d, and an equation of:
+        \begin{equation*}
+            y = ax^{3} + bx^{2} + cx + d
+        \end{equation*}
+    \end{definition}
+    \begin{definition}
+        Power Growth/Decay: This has a $y_{int}$ of 0, and an equation of:
+        \begin{equation*}
+            y = ax^{b}
+        \end{equation*}
+    \end{definition}
+    
+    \subsection{Selecting a Regression}
+    To select a regression, we must take into account various factors.
+    \begin{itemize}
+        \item $r^{2}$: Coefficient of determination
+        \item Shape of the data.
+        \item Starting Value.
+        \item Ending Value.
+    \end{itemize}
+    
+    \subsection{Cause and Effect Relationships}
+    The main reason correlations are useful to us is for finding evidence of a cause/effect relationship.
+    \textbf{Remember: A strong correlation doesn't prove causation}. 
+    There are various types and degrees of causal relationships between variables. 
+    \begin{definition}
+        Cause and Effect Relationships: Exists when a change in $X$ produces a guaranteed change in $Y$.
+        Physical processes display this type of relationship.
+    \end{definition}
+    \begin{definition}
+        Common Cause Factor: Exists when a factor outside of the two variables causes similar changes in the two variables. 
+    \end{definition}
+    \begin{definition}
+        Reverse Cause and Effect Relationship: Exists when dependent and independent are reversed when establishing causality. Example: A link between coffee and high anxiety exists, but it is later revealed that anxiety leads towards coffee consumption. 
+    \end{definition}
+    \begin{definition}
+        Accidental Relationships: A correlation exists without any causal relationship. Merely coincidence. 
+    \end{definition}
+    \begin{definition}
+        Presumed Relationships: A correlation that does not seem to be accidental even though no other relationships are apparent. 
+    \end{definition}

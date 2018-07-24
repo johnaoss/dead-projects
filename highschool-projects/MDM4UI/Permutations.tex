@@ -1,0 +1,95 @@
+\section{Permutations}
+
+    \subsection{What are Permutations?}
+    Permutations are the arrangements of objects in a set order. 
+    For instance, how many ways can you rearrange the letters in the word "APPLE",
+    or how many ways can you bring 4 people out of 20 friends to a party?
+
+    \subsection{Factorial Notation}
+    Often in permutations, we need to multiply descending consecutive numbers.
+    Since these numbers are descending and not ascending, we can safely assume that \textbf{every factorial must be positive}. 
+    For instance,  $5\cdot4\cdot3\cdot2\cdot1$ can often be simplified and written as \textbf{5!}, or 5 factorial.\\
+    The general rule for factorial notation is: 
+    \begin{equation*}%Factorial Equation
+        n! = n\cdot(n-1)\cdot(n-2)\cdots3\cdot2\cdot1
+    \end{equation*}
+    The exception to this rule is 0!, which in this case would be $0! = 1$, which would follow the same thinking as $n^0=0$.
+    
+    \subsection{Rule of Product and Rule of Sum}
+    How many different results can one get from flipping a coin 3 times?
+    You have 2 possibilities, heads or tails, and you flip it 3 times.
+    Essentially, you have three groups of two, or $2\cdot3$ different results, which turns out to be $6$ different possible results.
+    This is called the \emph{Fundamental Rule of Product} or the \emph{Counting Principle}
+    \begin{definition}
+        The Rule of Product states that if the $1^{st}$ action can be performed in n ways, and the $2^{nd}$ action can be performed in m ways.
+        They can be performed together in $n\cdot m$ ways. 
+    \end{definition}
+    What happens if the actions cannot be performed together? Such as which car to buy? In that case we have another rule, known as the \emph{Rule of Sum}.
+    \begin{definition}
+        The Rule of Sum states that if the $1^{st}$ action can be performed in n ways, and the $2^{nd}$ action can be performed in m ways, and these actions cannot occur together, then there are $n+m$ ways for either of the actions to occur.
+    \end{definition}
+    
+    \subsection{N-Arrangements}
+    Let's say you have 5 people, and you need to arrange them in a line.
+    You put one person in the first spot, and now you have 4 left. Repeat this until you are left with one person, which fits into the last spot.
+    You can express this mathematically by writing out $5!$ .\\
+    This is quite similar to the Rule of Product as:
+    \begin{enumerate}
+        \item Each placement is a choice
+        \item The number of choices is reduced with each previous action. 
+    \end{enumerate}
+    A permutation of \emph{n} objects is an arrangement of the objects in a \textbf{definite order}.
+    This can be expressed with permutation notation, shown below where P(n,n) equals the number of ways to permute n objects.
+    \begin{equation*}
+        P(n,n) = n!
+    \end{equation*}
+    This equation will only work when the number of spaces to occupy and the number of objects are equal.
+    In other cases we'll have to use an r-arrangement.
+    
+    \subsection{R-Arrangements}
+    If you have more objects than places you can put the objects into, then we can use something called an r-arrangement.
+    An r-arrangement is a permutation of \emph{n} objects taken \emph{r} at a time, as is shown below.
+    \begin{equation*}
+       P(n,r) = \frac{n!}{(n-r)!} 
+    \end{equation*}
+    Where $P(n,r)$ equals the total number of arrangements you have, divided by the number of unused objects.
+    This is most commonly displayed on calculators as \emph{nPr}.
+    For example you have 4 subjects, but you can only study two at a time.
+    The equation for that would be $\frac{4!}{(4-2)!}=12\mbox{ combinations.}$ 
+    
+    \subsection{Permutations with Repeating Elements}
+    All previous examples will ONLY work with non-repeating elements, such as the letters in the word "MONTREAL", or 5 different books.
+    They will definitely NOT work for questions with repeating elements, such as the word "FIJI".
+    For all repeating elements we'll have to follow another rule shown below.
+    \begin{definition}
+        In general, the number of arrangements of \emph{n} objects of which \emph{a} of one kind are alike, and \emph{b} of one kind are alike and so forth is given by the expression below, Where the number of permutations can be found by dividing the total number of possible combinations by the repeating elements.
+        \begin{equation*}
+            \frac{n!}{a!b!c!\cdots}
+        \end{equation*}
+    \end{definition}
+    
+    \subsection{Problem Solving with Permutations}
+    There are 3 methods for solving problems with permutations. They are called: the Indirect Method, the Case Method, and Circular Arrangements.
+    
+        \subsubsection{Indirect Method}
+        The indirect method involves taking all possibilities and subtracting those which are not wanted.
+        For instance, say you have 3 people that need to sit at a table, but 2 of them don't want to sit beside each other.
+        There is a step-by-step process that you can use for this question that is explained below.
+        \begin{enumerate}
+                \item Find all possible permutations (ex. P(3,3) ),
+                \item Find all unwanted permutations (in this case when they are together),
+                \item Subtract the unwanted permutations from the wanted permutations.
+            \end{enumerate}
+        This can be written as:
+        \begin{equation*}
+            \mbox{\textbf{Wanted Outcomes}} = \mbox{Total Outcomes}-\mbox{Unwanted Outcomes}
+        \end{equation*}
+    
+        \subsubsection{Case Method}
+        The Case Method involves breaking down the equation into manageable parts, then adding them to get the final solution.
+        There is a step-by-step example problem in Section 1 of the appendix, along with an explanation of why, and how you manage the "breaking into parts" aspect.
+    
+        \subsubsection{Circular Arrangements}
+        Circular arrangements are no longer a part of the curriculum, and as such they will not be tested on, but they are still quite useful to know in niche cases.
+        If you have seven people seated at a table, and they all move to their rights, their positions may have moved, but their order remains the same, like a circle.
+        Keep in mind that if there is some fixed point, the question just ends into a typical linear arrangement, with the equation simplifying to $1 \cdot (n-1)!$.

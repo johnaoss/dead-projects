@@ -1,0 +1,69 @@
+\documentclass[final,1p,12pt]{elsarticle}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+\usepackage{amsthm}
+%% The amsmath package provides binomial notation for us
+\usepackage{amsmath}
+% The tikz package provides drawings for Combinations set notation (Venn Diagram), and later on graphs.
+\usepackage{tikz}
+% The pgfplots package provides an extended environment for graphing.
+\usepackage{pgfplots}
+
+%% Removes the wonky "Preprint Submitted to Elsevier" and adds a front-page footer. 
+\makeatletter
+\def\ps@pprintTitle{%
+ \let\@oddhead\@empty
+ \let\@evenhead\@empty
+ \def\@oddfoot{\centerline{\thepage}}%
+ \let\@evenfoot\@oddfoot}
+\makeatother
+
+%% Definitions
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newcommand*\mean[1]{\bar{#1}}
+\newcommand*\median[1]{\tilde{#1}}
+\pgfplotsset{compat=1.13}
+\usetikzlibrary{backgrounds}
+%% Start of Document
+\begin{document}
+
+%% Header
+\begin{frontmatter}
+    \title{Exam Notes for MDM4UI}
+    \author{John Oss\\
+            \today\\
+            \LaTeX}
+    \begin{abstract}
+        Notes for all topics taught in MDM4UI (Data Management) from the winter term of the 2016-2017 school year at GCI.  
+        Please refer to the appendix for a walk-through of example questions that will probably be on the exam. 
+        Sorry for the formatting. I'm not quite done yet.
+    \end{abstract}
+\end{frontmatter}
+
+%% Table of Contents
+%% TODO: After everything is finished, allow hyperlinking in the Table of Contents.
+%%
+%% \tableofcontents
+
+%% Body
+%% Sections are their own files to make debugging a lot easier.
+
+\input{Permutations.tex}
+
+\input{Combinations.tex}
+
+\input{Matrices.tex}
+
+\input{Probability.tex}
+
+\input{Distributions.tex}
+    
+\input{Single-Variable-Stats.tex}
+
+\input{Double-Variable-Stats.tex}
+\end{document}
+
+%% EOF

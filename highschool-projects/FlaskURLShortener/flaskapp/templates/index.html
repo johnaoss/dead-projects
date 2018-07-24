@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% block title %}
+Flask App
+{% endblock %}
+{% block content %}
+<div class="mb4" role="header">
+	<h1>URL Shortener</h1>
+	<p>Type in your URL below and shorten your URL!</p>
+	<form action="{{ url_for('homepage') }}" method=post class="sm-col-6">
+		<input type="link" name="link" class="block col-6 mb1 field">
+		<button type="submit" value="shorten" class="btn btn-primary">Shorten URL</button>
+	</form>
+</div>
+{% if session['logged_in'] == True %}
+	<div class="mb4"></div>
+		<h3>Admin Section</h3>
+		  <ul class=links>
+  			{% for link in links %}
+    		<li><h2>{{ link.dest }}</h2>{{ link.mini }}
+  			{% else %}
+    		<li><em>Unbelievable.  No entries here so far</em>
+  			{% endfor %}
+  		</ul>
+  	</div>
+{% endif %}
+{% endblock %}

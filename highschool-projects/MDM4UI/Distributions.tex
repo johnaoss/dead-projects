@@ -1,0 +1,87 @@
+\section{Probability Distributions}
+
+    \subsection{What is a probability distribution?}
+    A probability distribution is a method of displaying data that displays the probabilities of every possible outcome. We'll need to define a few types of distributions first though, which are uniform and non-uniform distributions.
+    \begin{definition}
+        Uniform Distribution: A distribution is called uniform when all of the outcomes are equally likely, just like a single die roll.
+    \end{definition}
+    \begin{definition}
+        Non-Uniform Distribution: A distribution is called non-uniform when not all of the outcomes are equally likely, just like rolling the sum of a pair of dice.
+    \end{definition}
+    The variable we measure when calculating these, is called the random variable, and is denoted as $X$. The various possibilities for $X$ are the outcomes, denoted $x$. We'll typically find the probability distributions that rely on two different types of variables: discrete and continuous variables. 
+    \begin{definition}
+        Discrete Variables: These are values that are typically separate from each other, and have a finite number of possibilities.
+    \end{definition}
+    \begin{definition}
+        Continuous Variables: These are values that have an infinite number of possibilities, such as a length of time.
+    \end{definition}
+    
+    \subsection{Sigma Notation \& Regular Probability Distributions}
+    Sigma Notation, or $\sum_{}^{}$, may look terrifying, but it simply means the sum of a lot of numbers. We use this when finding an expected value of something, which we'll denote as $E(x)$. To find this, we'll use the equation below.
+    \begin{equation*}
+        E(x) = \sum_{i=1}^{n}x_{i}P(x_{i})
+    \end{equation*}
+    To break it down, the $i=1$ is the start, the $n$ is the stop, $x_{i}$ is the outcome, and $P(x_{i})$ is the possibility of that outcome.
+    To show this in action, let's suppose that in a game, you'll get the amount of points you'll roll on a die.
+    To find that, we'll need to use find $E(x)$.
+    We know that the probability of rolling each number is $\frac{1}{6}$, and we know all the outcomes, so let's fill out the equation. First, we'll need to set our limits though.
+    \begin{equation*}
+        E(x) = \sum_{i=1}^{6}
+    \end{equation*}
+    This means that we must repeat the $x_{i}P(x_{i})$ starting at one, going to six, which would be six times.
+    Now we'll expand that below.
+    \begin{equation*}
+        E(x) = 1(\frac{1}{6}) + 2(\frac{1}{6}) + 3(\frac{1}{6}) + 4(\frac{1}{6}) + 5(\frac{1}{6}) + 6(\frac{1}{6})
+    \end{equation*}
+    We can also simplify this, as we know it is a uniform distribution. Shown below is the updated equation for this uniform distribution.
+    \begin{equation*}
+        E(x) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)
+    \end{equation*}
+    
+    \subsection{Binomial Distribution}
+    Remember binomials from combinations? They look like this $\binom{x}{y}$, and come in handy when working with distributions.
+    We have to mention something called a Bernoulli Trial first.
+    \begin{definition}
+        Bernoulli Trials: This refers to repeated, independent trials that are measured in terms of success, or failure (or other Boolean outcomes).
+    \end{definition}
+    The probability distribution of the number of successes in Bernoulli Trials is called a binomial distribution, and is found using the equation below.
+    \begin{equation*}
+        P(x) = \binom{n}{x}p^{x}q^{n-x}
+    \end{equation*}
+    The equation solves for the probability of exactly $x$ successful trials out of $n$ total trials. In this equation, $p$ represents the probability of success, and $q$ represents the probability of failure.
+    To find the expected value for a binomial distribution, we'll resort to using the formula below.
+    \begin{equation*}
+        E(x) = n\cdot p
+    \end{equation*}
+
+    \subsection{Geometric Distributions}
+    A geometric distribution is found when an experiment is repeated just \textbf{until the first success}.
+    It differs from binomial distributions, as the number of trials is not known at the start. 
+    Just before the success, there is something called a "waiting period". 
+    \begin{definition}
+        Waiting Period: This is the number of failures before the first and only success. 
+    \end{definition}
+    If you have 8 failures before your success, then you have a waiting period of 8.
+    To solve for the probability of success after $x$ failures, we can use the formula below.
+    Remember, $x$ represents the waiting period.
+    \begin{equation*}
+        P(x) = q^{x}p^{1}
+    \end{equation*}
+    In this equation, the variable $p$ \textbf{must have a max of one} as you can never have more than one success in a Geometric Distribution. To find your expected waiting period, you must solve for $E(x)$, which you can do by using the formula below.
+    \begin{equation*}
+        E(x) = \frac{q}{p}
+    \end{equation*}
+    \subsection{Hyper\textemdash Geometric Distribution}
+    Hyper-Geometric Distribution are quite similar to Geometric Distributions, yet they are dependent, rather than independent.
+    Repeated sampling without replacement exhibits this type of process.
+    To find the probability of this, we must use the equation below, where $n$ represents the total number of choices,
+    $r$ represents the total number of items chosen,
+    $a$ represents the number of successes to choose from, and
+    $x$ represents the successes chosen.\\
+    \begin{equation*}
+        P(x) = \frac{\binom{a}{x}\cdot \binom{n-a}{r-x}}{\binom{n}{r}}
+    \end{equation*}
+    We can also find the number of expected successes chosen by using the formula below, using the same variables as in the equation above.
+    \begin{equation*}
+        E(x) = r \cdot \frac{a}{n}
+    \end{equation*}

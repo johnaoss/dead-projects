@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+<div class="mb4">
+  {% if session['logged_in'] != True %}
+  <h1>Login</h1>
+  {% if error %}<p class=error><strong>Error:</strong></p> {{ error }}{% endif %}
+  <form action="{{ url_for('login') }}" method=post class="sm-col-6">
+    <label>Email Address</label>
+    <input type="username" name="username" class="block col-6 mb1 field">
+    <label>Password</label>
+    <input type="password" name="password" class="block col-6 mb1 field">
+    <button type="submit" value="Login" class="btn btn-primary">Sign In</button>
+    <a type="reset" class="btn btn-primary black bg-gray" href="/">Cancel</a>
+  </form>
+  {% else %}
+  <h1> You are already logged in </h1>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+flaskapp.egg-info/
+flaskapp/__pycache__/
+flaskapp/flaskapp.db 
+*.pyc
+
+*.db

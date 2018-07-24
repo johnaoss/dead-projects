@@ -1,0 +1,90 @@
+\section{Example Equations Explained}
+
+    \subsection{Permutations}
+    
+        \subsubsection{Factorial Notation}
+            \begin{example}
+                Solve the following equation for n. State restrictions.
+                \begin{equation*}
+                    \frac{n!}{(n-3)!}=2n
+                \end{equation*}
+            \end{example}
+            To solve for n, we must first divide out the denominator, which in this case is $(n-3)!$. Before all of this, we should state our restriction. Since a factorial may not be negative, and $(n-3)!$ would equal $-3!$ our restriction is that \emph{$n\geqslant3$}. You may notice there is no $(n-3)!$ in the top, but the solution for this is simple. If you recall the equation for factorial notation, we can expand the top of this question.  Following this, the equation expands to:
+            \begin{equation*}
+                \frac{n\cdot(n-1)\cdot(n-2)\cdot(n-3)!}{(n-3)!}=2n
+            \end{equation*}
+            Next, the $(n-3)!$s cancel out, to bring you this:
+            \begin{equation*}
+                n\cdot(n-1)\cdot(n-2) = 2n
+            \end{equation*}
+            Now we can divide out the n from both sides. To get this:
+            \begin{equation*}
+                (n-1)\cdot(n-2) = 2
+            \end{equation*}
+            We can't divide any further, so we'll need to expand.
+            \begin{equation*}
+                n^2 -3n+2 = 2
+            \end{equation*}
+            Move the 2 over so we can turn this into something we can factor.
+            \begin{equation*}
+                n^2 -3n=0
+            \end{equation*}
+            Use factor by grouping to factor this equation.
+            \begin{equation*}
+                n(n-3)=0
+            \end{equation*}
+            So either $n=0$ or $n-3=0$. Following our restriction, n be greater than 3, so $n=0$ is inadmissible, therefore the answer must be $n=3$.
+    \clearpage
+        \subsubsection{Rule of Product and Rule of Sum}
+            \begin{example}
+                Using only the numbers from $0\cdots4$, how many three digit numbers can you find if the number 4 \textbf{MUST} be included. No repetition.
+            \end{example}
+            For this question we must follow the Rule of Sum.
+            
+    \clearpage
+        \subsubsection{Problem Solving with Permutations}
+            \begin{example}
+                Try to find the total number of arrangements of the numbers 0-7(8 digits) that are even. No repetition is allowed, and the number cannot start with a 0.
+            \end{example}
+            For this question, you can use the \textbf{Case Method} and break the question down into numbers that end in a zero, and numbers that don't end in a zero, yet still end in an even number. 
+            \begin{parcolumns}{2}
+                \colchunk[1]{\\\textbf{Numbers that end in a zero:}
+                    $$7! \cdot 1 = 5040$$ \\
+                    \textbf{Explanation:} One has 7 possible numbers for the first place, and only zero as the final possible number.
+                }
+                \colchunk[2]{\\\textbf{Numbers that end in 2,4,6:}
+                    $$6 \cdot 6 \cdot 3 = 12960$$ \\
+                    \textbf{Explanation:} The last number is 3, and represents the possible even numbered endings (2,4,6). The reason why it is $6 \cdot 6$, it is because zero cannot be first, yet it can be second.\\
+                }
+                \colplacechunks
+            \end{parcolumns}
+            This question isn't over yet though. Finally, you will have to add the solutions together, as you may have found all of the answers for the possible even numbers (0,2,4,6), but they haven't been added together yet.
+            \begin{equation*}
+                5040 + 12960 = 18000
+            \end{equation*}
+            \emph{In conclusion}, there will be 18000 possible combinations of even numbers by using the numbers 0-7 (8 digits in total).
+            
+    \subsection{Combinations}
+    
+        \subsubsection{Set Theory}
+    
+        \subsubsection{Intro to Combinations}            
+            \begin{example}
+                A committee of 4 people is chosen from 10 students, 6 parents, and 10 teachers. Order does not matter. How many ways can we make the committee if there are a) no restrictions, b) At least one teacher on the committee or c) Exactly three students on the committee.
+            \end{example}
+            \textbf{a) No restrictions:}\\
+            We can assume that this is a combination, as there are no restrictions other than order does not matter. Therefore we only need to fill in the combination equation, which turns out to be C(26,4). 
+            \begin{equation*}
+                \binom{26}{4} = 14950
+            \end{equation*}
+            \textbf{b) At least one teacher.}
+            There are two ways to handle this question, we can solve it either directly, or indirectly. In this example, I will choose indirectly. In this case, we want every solution with a teacher in it, and do not want the solution with zero teachers. Therefore we must subtract the unwanted solutions from all the solutions. This would work out to be:
+            \begin{equation*}
+                \binom{26}{4} - \binom{10}{0}\cdot\binom{16}{4} = 13130
+            \end{equation*}
+            \textbf{c) Exactly three students.}
+            For this question, we are forced to do it one way and one way only, as the question refers to \emph{exactly three} students. To start we must have 3 students on the committee, and then since we have one space left on the committee, we must fill that spot with someone who \emph{IS NOT} a student, as that would ruin our "exactly three" need. This works out to be:
+            \begin{equation*}
+                \binom{10}{3}\cdot\binom{24-10}{1} = 1680
+            \end{equation*}
+        
